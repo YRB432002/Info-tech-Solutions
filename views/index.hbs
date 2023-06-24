@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="/static/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+  <title>Dynamic Website</title>
+</head>
+
+<body>
+  {{>navbar data=details}}
+
+  {{> slider slides=slides}}
+
+  {{!-- service section --}}
+  <section id="services_section" class="py-4">
+    <div class="container">
+      <h1 class="text-center text-secondary">Our Services</h1>
+      <div class="row mt-5">
+        {{!-- first service column --}}
+        {{#each services}}
+        <div class="col-md-4 px-2 py-2">
+          <div class="card">
+            <div class="card-body">
+              <div class="container " style="text-align: center">
+                <i class="{{this.icon}} service_icon text-secondary"></i>
+              </div>
+              <h3 class="card-title py-1">{{this.title}}</h3>
+              <p>{{this.description}}</p>
+              <div style="text-align: center">
+                <a href="{{this.link1}}" class="px-4 btn btn-primary "
+                  style="margin-right: 1rem;">{{this.linkText1}}</a>
+                <a href="{{this.link2}}" class=" px-4 btn btn-primary">{{this.linkText2}}</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        {{/each}}
+      </div>
+    </div>
+  </section>
+
+  {{!-- Contact Us section --}}
+
+  <section id="contact_us_section" class="py-5 background1" style="border-radius: 1rem;">
+    <div class="container">
+      <h3 class="text-center text-muted">Contact Us</h3>
+      <div class="row">
+        <div class="col-md-12">
+
+          <form action="/process-contact-form" method="post">
+
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label text-white">Your Email Address</label>
+              <input name="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+              <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+            </div>
+
+            <div class="mb-3">
+              <label for="contactNumberField" class="form-label text-white">Your Contact Number</label>
+              <input name="phone" type="number" class="form-control" id="exampleInputPassword1">
+            </div>
+
+            <div class="form-floating mt-2 my-2">
+              <textarea name="query" style="height: 15rem;" class="form-control" placeholder="Enter Your Query Here" id="queryField"></textarea>
+              <label for="queryField">Your Query !</label>
+            </div>
+
+            <div class="container text-center">
+              <button type="submit" class="btn btn-dark">Submit</button>
+            </div>
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {{!-- FOOTER --}}
+
+  {{>footer data=footers}}
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+
+
+</body>
+
+</html>
