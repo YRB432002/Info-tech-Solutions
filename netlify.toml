@@ -1,6 +1,10 @@
 [functions]
   external_node_modules = ["express"]
-  inluded_files = ["views/*/*.hbs","views/*.hbs"]
+  [functions.inluded_files]
+    external_node_modules = [
+      "views/*/*.hbs",
+      "views/*.hbs"
+    ]
   node_bundler = "esbuild"
 [build]
   functions = "src"  
