@@ -139,7 +139,7 @@ mongoose.connect("mongodb://0.0.0.0:27017/Website")
   })
 
 
-app.listen(process.env.PORT | 5556,()=>{
+app.listen(process.env.PORT || 5556,()=>{
     console.log("server is running");
 });
 
