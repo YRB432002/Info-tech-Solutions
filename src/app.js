@@ -1,4 +1,5 @@
 const express=require("express");
+const serverless =require('serverless-http');
 const hbs=require("hbs");
 const mongoose = require("mongoose");
 const app = express();
@@ -141,3 +142,5 @@ mongoose.connect("mongodb://0.0.0.0:27017/Website")
 app.listen(process.env.PORT | 5556,()=>{
     console.log("server is running");
 });
+
+export const handler = serverless(app);
