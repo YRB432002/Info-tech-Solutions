@@ -1,9 +1,9 @@
 [functions]
-  external_node_modules = ["express"]
-  [functions.inluded_files]
+  external_node_modules = ["express","body-parser","hbs","mongoose","serverless-http"]
+
     inluded_files = [
-      "views/*/*.hbs",
-      "views/*.hbs"
+        "views/*/*.hbs",
+        "views/*.hbs"
     ]
   node_bundler = "esbuild"
 [build]
