@@ -1,7 +1,7 @@
 [functions]
   external_node_modules = ["express"]
   [functions.inluded_files]
-    external_node_modules = [
+    inluded_files = [
       "views/*/*.hbs",
       "views/*.hbs"
     ]
