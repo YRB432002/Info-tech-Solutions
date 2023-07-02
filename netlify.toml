@@ -1,6 +1,9 @@
 [functions]
   external_node_modules = ["express"]
+  inluded_files = ["views/*/*.hbs","views/*.hbs"]
   node_bundler = "esbuild"
+[build]
+  functions = "src"  
 [[redirects]]
   force = true
   from = "/*"
